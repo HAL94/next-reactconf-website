@@ -1,0 +1,59 @@
+.unique-card {
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: rotate(-180deg);
+    opacity: 0;
+  }
+    50% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.5);
+  }
+    100% {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+}
+@keyframes fadeUpIn {
+  0% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+    50% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.5);
+  }
+    100% {
+    opacity: 1;
+    transform: rotate(-180deg);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .icon {
+    transition: all 0.3s ease;
+    animation-name: fadeUpIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+
+  .unique-card:hover .icon {
+    animation-name: fadeInUp;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+
+  .unique-card:hover {
+    box-shadow: none !important;
+  }
+}

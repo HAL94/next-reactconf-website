@@ -1,0 +1,9 @@
+.reveal {  
+  transform: scale(0);  
+  opacity: 0;
+  transition: 1s all ease;
+}
+.active {  
+  opacity: 1;
+  transform: scale(1);
+}

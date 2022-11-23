@@ -1,26 +1,69 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #319bce;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   html {
-    color-scheme: dark;
+    font-family: 'Raleway', sans-serif;
   }
-  body {
-    color: white;
-    background: black;
+}
+
+@layer components {
+  .link {
+    @apply cursor-pointer text-lg text-secondary lg:hover:text-primary transition-all duration-200 ease-in relative;
   }
+
+  .link::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    height: 3px;
+    width: 0;
+    transform: scale(-1);
+    background-color: transparent;
+    transition: all 300ms ease;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .link:hover::before {
+      content: '';
+      opacity: 1;
+      left: 0;
+      width: 100%;
+      background-color: #319bce;
+    }
+  }
+
+  .primary-button {
+    @apply bg-primary text-white hover:scale-105 hover:translate-y-[-25%] transition-all duration-300 ease-in p-3 rounded;
+  }
+}
+
+.primary-gradient {
+  background: linear-gradient(
+    45deg,
+    hsla(173, 30%, 69%, 1) 0%,
+    hsla(199, 62%, 50%, 1) 88%
+  );
+}
+
+.reveal-dot-icons {
+  position: relative;
+  transform: translateY(-150px);
+  left: -20px;
+  top: -294px;
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal-dot-icons.active {
+  transform: translateY(0);
+  opacity: 1;
 }

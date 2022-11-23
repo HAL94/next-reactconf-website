@@ -1,0 +1,21 @@
+.reveal {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: 1s all ease;
+}
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay {
+  transform-origin: left right;
+}
+
+@media only screen and (min-width: 1024px) {
+  .sector {
+    transform: scale(0, 1);
+    transform-origin: right center;
+  }
+}
