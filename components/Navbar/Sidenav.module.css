@@ -1,0 +1,38 @@
+.navlink {
+  @apply border-t px-5 py-1 text-left !justify-start;
+}
+
+.show {
+  animation-name: inAnimation;
+  animation-duration: 0.5s;
+}
+.hide {
+  animation-name: outAnimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: "forwards"
+}
+
+@keyframes inAnimation {
+  from {
+    width: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes outAnimation {
+  from {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    width: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

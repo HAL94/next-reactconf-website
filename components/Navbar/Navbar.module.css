@@ -1,5 +1,37 @@
 .sidenav {       
-    transform: translateX(0);
-    width: 100%;    
+    transform: translateX(-100%);    
+    display: none;    
+    transition: all 0.2s ease-in;
+    width: 0;
+    opacity: 0;
 }
 
+.visuallyhidden {
+    display: flex;
+    flex-direction: column;   
+}
+
+.shown {
+    transform: translateX(0);
+    width: 100%;
+    opacity: 1;
+    height: auto;
+}
+
+.btnripple {
+    position: relative;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

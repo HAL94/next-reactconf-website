@@ -1,12 +1,12 @@
-.reveal {
+.reveal-dot-icons {
   position: relative;
   transform: translateY(-150px);
-  left: 28px;
-  top: 0;
+  left: -20px;
+  top: -294px;
   opacity: 0;
-  transition: 1s all ease;
+  transition: 2s all ease;
 }
-.reveal.active {
+.reveal-dot-icons.active {
   transform: translateY(0);
   opacity: 1;
 }

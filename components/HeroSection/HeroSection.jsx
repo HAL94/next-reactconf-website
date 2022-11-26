@@ -42,9 +42,9 @@ const HeroSection = ({ confDetails }) => {
     >
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center pt-30">
         <span className='primary-gradient cursor-pointer p-4 text-white rounded shadow-md'>{startDate.toLocaleString('default', { day: 'numeric' })} - {enddate.toLocaleString('default', { day: 'numeric' })}, {startDate.toLocaleString('default', { month: 'long' })} { enddate.getFullYear() } </span>
-        <h1 className='text-6xl xs:text-2xl font-semibold text-secondary my-2'>{confName}</h1>
-        <h3 className='text-3xl xs:text-xl font-semibold text-secondary'>{confLocation}</h3>
-        <h4 className='text-3xl xs:text-xl font-semibold text-secondary my-6'>Opening Times: {confOpeningTimes}</h4>
+        <h1 className='text-6xl xs:text-2xl font-semibold text-white my-2'>{confName}</h1>
+        <h3 className='text-3xl xs:text-xl font-semibold text-white'>{confLocation}</h3>
+        <h4 className='text-3xl xs:text-xl font-semibold text-white my-6'>Opening Times: {confOpeningTimes}</h4>
 
         <div className={`w-full px-10 py-2  text-white flex flex-wrap flex-row items-center justify-center my-4`}>
           <div className={`flex flex-col justify-center items-center p-4 mx-2 w-[130px] rounded primary-gradient my-2`}>

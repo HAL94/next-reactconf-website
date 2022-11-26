@@ -1,25 +1,30 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
-export default function useAppearAnimation({ animateClass, activeClass }) {
-  useEffect(() => {
-    const reveal = () => {
-      const reveals = document.querySelectorAll(`.${animateClass}`);
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-
-        if (elementTop < windowHeight) {
-          reveals[i].classList.add(`${activeClass}`);
-        }
+export default function useAppearAnimation({ animateClass, activeClass, repeatAnimation = false }) {
+  
+  const observeFn = useCallback(() => {
+    const reveals = document.querySelectorAll(`.${animateClass}`);
+    const observer = new IntersectionObserver((entries) => {
+      if (repeatAnimation) {
+        entries.forEach(entry => entry.target.classList.toggle(`${activeClass}`, entry.isIntersecting))
+      } else {        
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(`${activeClass}`)
+          }
+        })        
       }
-    };
+    });
+    reveals.forEach((element) => observer.observe(element));
+    return observer;
+  }, [animateClass, activeClass, repeatAnimation]);
 
-    window.addEventListener('scroll', reveal);
-
-    reveal();
-
+  useEffect(() => {
+    const observer = observeFn();
     return () => {
-      window.removeEventListener('scroll', reveal);
-    };
-  }, [animateClass, activeClass]);
+      if (observer) {
+        observer.disconnect();
+      }
+    }
+  }, [observeFn])
 }

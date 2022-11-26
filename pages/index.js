@@ -9,6 +9,7 @@ import ExhibitorList from '../components/ExhibitorList/ExhibitorList';
 import WhyUnique from '../components/WhyUnique/WhyUnique';
 import SectorsList from '../components/SectorsList/SectorsList';
 import JoinUs from '../components/JoinUs/JoinUs';
+import RootLayout from '../layout/RootLayout';
 
 export async function getStaticProps() {
   try {
@@ -46,11 +47,10 @@ export async function getStaticProps() {
     };
   }
 }
-export default function Home({ confDetails, sponserResult, exhibitorResult, sectorsResult }) {
+const Home = ({ confDetails, sponserResult, exhibitorResult, sectorsResult }) => {
   return (
     <>
-      <Section className='min-h-screen'>
-        <Navbar />
+      <Section className='min-h-screen'>        
         <HeroSection confDetails={confDetails} />
       </Section>
       <Section className='min-h-screen bg-[#fafafa]'>
@@ -77,3 +77,8 @@ export default function Home({ confDetails, sponserResult, exhibitorResult, sect
     </>
   );
 }
+
+
+Home.Layout = RootLayout;
+
+export default Home;

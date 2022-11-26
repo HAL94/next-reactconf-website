@@ -1,0 +1,16 @@
+.reveal {
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: 1s all ease;
+}
+
+.active {
+  opacity: 0.05;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 1023px) {
+    .reveal {
+        display: none;
+    }
+}

@@ -16,7 +16,11 @@
 
 @layer components {
   .link {
-    @apply cursor-pointer text-lg text-secondary lg:hover:text-primary transition-all duration-200 ease-in relative;
+    @apply cursor-pointer text-lg  lg:hover:text-primary transition-all duration-200 ease-in relative;
+  }
+
+  .text {
+    @apply text-justify lg:text-lg
   }
 
   .link::before {
@@ -45,6 +49,10 @@
   .primary-button {
     @apply bg-primary text-white hover:scale-105 hover:translate-y-[-25%] transition-all duration-300 ease-in p-3 rounded;
   }
+
+  .form-button {
+    @apply bg-primary text-white p-3 rounded hover:bg-[#1c698e] transition-all duration-300 ease-in;
+  }
 }
 
 .primary-gradient {
@@ -55,15 +63,4 @@
   );
 }
 
-.reveal-dot-icons {
-  position: relative;
-  transform: translateY(-150px);
-  left: -20px;
-  top: -294px;
-  opacity: 0;
-  transition: 2s all ease;
-}
-.reveal-dot-icons.active {
-  transform: translateY(0);
-  opacity: 1;
-}
+

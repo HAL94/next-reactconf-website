@@ -1,38 +1,17 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import IconDots3 from '../../public/icon-dots-3.png';
-import IconDotsBg from '../../public/icon-dots-2.png';
+import styles from './WhyUs.module.css';
 
 import { AiFillCheckCircle } from 'react-icons/ai';
+import useAppearAnimation from '../../hooks/useAppearAnimation';
 
-const WhyUs = ({ aboutConf, whyUsImage }) => {
-  console.log('aboutConf');
+const WhyUs = ({ aboutConf, whyUsImage }) => {  
   const aboutConfText = aboutConf.split('\n');
-
-  useEffect(() => {
-    const reveal = () => {
-      const reveals = document.querySelectorAll('.reveal-dot-icons');
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-
-        if (elementTop < windowHeight) {
-          reveals[i].classList.add('active');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', reveal);
-
-    reveal();
-
-    return () => {
-      window.removeEventListener('scroll', reveal);
-    };
-  }, []);
+  useAppearAnimation({ animateClass: styles['reveal-dot-icons'], activeClass: styles.active })
   return (
     <div className="container relative mx-auto py-10 lg:px-4 px-10 flex flex-wrap justify-center items-center">
-      <div className={`hidden lg:block absolute reveal-dot-icons`}>
+      <div className={`hidden lg:block absolute ${styles['reveal-dot-icons']}`}>
         <Image
           src={IconDots3}
           width={200}

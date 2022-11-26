@@ -1,0 +1,43 @@
+.dropnav {
+  transform-origin: top;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05),
+    -2px 0px 5px 1px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  width: 250px;
+}
+
+.show {
+  animation-name: dropdownCollapse;
+  animation-duration: 0.3s;
+}
+
+.hide {
+  animation-name: dropdownUncollapse;
+  animation-duration: 0.3s;
+}
+
+@keyframes dropdownCollapse {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20%) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes dropdownUncollapse {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) rotateX(0deg);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20%) rotateX(90deg);
+  }
+}
