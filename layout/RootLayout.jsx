@@ -44,12 +44,15 @@ const websiteLinks = [
     id: 'a513-4d6f-b7f4-0f3d24990871',
   },
 ];
+
+const getFooterLink = (link) => link.link === '/contact' || link.link === '/speakers' || link.link === '/about-us' || link.link === '/';
 export default function RootLayout({ children }) {
+  const footerLinks = websiteLinks.filter(getFooterLink)
   return (
-    <>
+    <div className='min-h-screen flex flex-col'>
       <Navbar websiteLinks={websiteLinks} />
       {children}
-      <Footer />
-    </>
+      <Footer footerLinks={footerLinks} className={'mt-auto'} />
+    </div>
   );
 }

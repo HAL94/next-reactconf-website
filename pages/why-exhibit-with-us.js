@@ -1,38 +1,19 @@
 import Section from '../components/Section/Section';
 import RootLayout from '../layout/RootLayout';
-import Banner from '../public/whychooseus.jpg';
-
-import styles from '../styles/why-exhibit-with-us.module.css';
+import Banner from '../components/Banner/Banner';
+import WhyUsImage from '../public/whychooseus.jpg';
 
 import IconCircle from '../components/IconCircle/IconCircle';
+import DescriptionArticle from '../components/DescriptionArticle/DescriptionArticle';
 
-const WhyChooseUs = () => {  
+const WhyChooseUs = () => {
   return (
     <Section className={'min-h-screen'}>
-      <div
-        className={`${styles.banner} flex justify-center items-center w-full h-[250px] lg:h-[500px]`}
-      >
-        <div
-          className="w-full bg-[length:140%] lg:bg-[length:100%] h-full absolute flex justify-center items-center"
-          style={{
-            backgroundImage: `url(${Banner.src})`,
-            backgroundPosition: 'bottom center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <h1 className="text-5xl font-semibold text-white">Why Choose Us</h1>
-        </div>
-      </div>
+      <Banner bannerImage={WhyUsImage} bannerText={'Why Choose Us'} />
 
       <div className="flex relative flex-col justify-center items-center py-20 lg:px-16 px-7 container mx-auto lg:max-w-[1200px]">
         <IconCircle />
-        <p className="text-lg self-start uppercase font-semibold tracking-widest my-5 text-primary">
-          Why Us?
-        </p>
-        <h1 className="self-start text-6xl font-semibold text-secondary mb-5">
-          Why Exhibit with us?
-        </h1>
-        <div className="text">
+        <DescriptionArticle subtitle="Why Us?" title="Why Exhibit with us?">
           In case you&apos;re not showing at Saudi Food Expo you&apos;re passing
           up an entire scope of game-evolving benefits. Advantages that could
           very well have that vital effect in changing your business into a
@@ -65,7 +46,7 @@ const WhyChooseUs = () => {
           Also, talking about your rivals, you can advance your business in a
           climate where you have similar outreach to similar clients like the
           big players in your field do. So, in the end, we ask you{' '}
-        </div>
+        </DescriptionArticle>
       </div>
     </Section>
   );

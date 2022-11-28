@@ -9,6 +9,8 @@ import { FiTarget } from 'react-icons/fi';
 import { AiFillEye } from 'react-icons/ai';
 import { SlEnvolope } from 'react-icons/sl';
 import useAppearAnimation from '../hooks/useAppearAnimation';
+import SimpleBox from '../components/SimpleBox/SimpleBox';
+import DescriptionArticle from '../components/DescriptionArticle/DescriptionArticle';
 
 const AboutUs = () => {
   useAppearAnimation({
@@ -40,57 +42,33 @@ const AboutUs = () => {
 
       <div className="flex relative flex-col justify-center items-center py-20 lg:px-16 px-7 container mx-auto lg:max-w-[1200px]">
         <div className={`grid lg:grid-cols-3 grid-cols-1 gap-4`}>
-          <div
-            className={`${styles.reveal} col-span-1 flex flex-col group justify-center items-center p-6 border shadow-lg transition-all duration-300 ease-in lg:hover:shadow-none cursor-pointer`}
-          >
-            <div className="bg-[#f1f6fe] p-4 transition-all duration-300 ease-in rounded lg:group-hover:scale-105">
-              <FiTarget size={50} color="#319bce" />
-            </div>
-            <div className="flex flex-col my-4 justify-center items-center">
-              <span className="text-xl text-secondary">Our Mission</span>
-              <p className="w-full text-center mb-3 mt-2">
-                Zeroing in on Tech Industry while presenting exhibitors access
-                to a higher value exhibition
-              </p>
-            </div>
-          </div>
-          <div
-            className={`${styles.reveal} col-span-1 flex flex-col group justify-center items-center p-6 border shadow-lg transition-all duration-300 ease-in lg:hover:shadow-none cursor-pointer`}
-          >
-            <div className="bg-[#f1f6fe] p-4 transition-all duration-300 ease-in rounded lg:group-hover:scale-105">
-              <AiFillEye size={50} color="#319bce" />
-            </div>
-            <div className="flex flex-col my-4 justify-center items-center">
-              <span className="text-xl text-secondary">Our Vision</span>
-              <p className="w-full text-center mb-3 mt-2">
-                Our vision is to be the most trusted and acknowledged Technology
-                Exhibition
-              </p>
-            </div>
-          </div>
-          <div
-            className={`${styles.reveal} col-span-1 flex flex-col group justify-center items-center p-6 border shadow-lg transition-all duration-300 ease-in lg:hover:shadow-none cursor-pointer`}
-          >
-            <div className="bg-[#f1f6fe] p-4 transition-all duration-300 ease-in rounded lg:group-hover:scale-105">
-              <SlEnvolope size={50} color="#319bce" />
-            </div>
-            <div className="flex flex-col my-4 justify-center items-center">
-              <span className="text-xl text-secondary">Our Message</span>
-              <p className="w-full text-center mb-3 mt-2">
-                We make a deep dive into understanding your exhibition goals as
-                we live and inhale &quot;outside the box&quot;
-              </p>
-            </div>
-          </div>
+          <SimpleBox
+            IconComponent={FiTarget}
+            iconProps={{ size: 50, color: '#319bce' }}
+            boxTitle="Our Mission"
+            boxText="Zeroing in on Tech Industry while presenting exhibitors access
+                to a higher value exhibition"
+            className="col-span-1"
+          />
+          <SimpleBox
+            IconComponent={AiFillEye}
+            iconProps={{ size: 50, color: '#319bce' }}
+            boxTitle="Our Vision"
+            boxText="Our vision is to be the most trusted and acknowledged Technology
+            Exhibition"
+            className="col-span-1"
+          />
+          <SimpleBox
+            IconComponent={SlEnvolope}
+            iconProps={{ size: 50, color: '#319bce' }}
+            boxTitle="Our Message"
+            boxText='We make a deep dive into understanding your exhibition goals as
+            we live and inhale "outside the box"'
+            className="col-span-1"
+          />
         </div>
         <IconCircle />
-        <p className="text-lg self-start uppercase font-semibold tracking-widest my-5 text-primary">
-          ABOUT US
-        </p>
-        <h1 className="self-start text-6xl font-semibold text-secondary mb-5">
-          Welcome to Reactors
-        </h1>
-        <div className="text">
+        <DescriptionArticle subtitle="About Us" title="Welcome to Reactors">
           Real change starts when an idea inspires activity, regardless of how
           little. By increasing understanding of your business ventures, we give
           the most ideal positioning of your brand during the moments of
@@ -150,7 +128,7 @@ const AboutUs = () => {
           the journey of endless possibilities. It&apos;s often the little
           changes that have the greatest impact and we pride ourselves on
           bringing that change.
-        </div>
+        </DescriptionArticle>        
       </div>
     </Section>
   );

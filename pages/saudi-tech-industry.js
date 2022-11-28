@@ -1,37 +1,20 @@
 import IconCircle from '../components/IconCircle/IconCircle';
 import Section from '../components/Section/Section';
 import RootLayout from '../layout/RootLayout';
-import styles from '../styles/about-us.module.css';
-import RiyadImage2 from '../public/riyadhbanner2.png';
+import RiyadImage2 from '../public/riyadhbanner.png';
+import Banner from '../components/Banner/Banner';
+import DescriptionArticle from '../components/DescriptionArticle/DescriptionArticle';
 
 const SaudiTechIndustry = () => {
   return (
     <Section className="min-h-screen">
-      <div
-        className={`${styles.banner} flex justify-center items-center w-full h-[250px] lg:h-[500px]`}
-      >
-        <div
-          className="w-full bg-[length:140%] lg:bg-[length:100%] h-full absolute flex justify-center items-center"
-          style={{
-            backgroundImage: `url(${RiyadImage2.src})`,
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <h1 className="text-5xl font-semibold text-white absolute z-[11]">
-            Saudi Tech Industry
-          </h1>
-        </div>
-      </div>
+      <Banner bannerImage={RiyadImage2} bannerText={'Riyadh, Saudi Arabia'} />
       <div className="flex relative flex-col justify-center items-center py-20 lg:px-16 px-7 container mx-auto lg:max-w-[1200px]">
         <IconCircle />
-        <p className="text-lg self-start uppercase font-semibold tracking-widest my-5 text-primary">
-          A Thriving industry
-        </p>
-        <h1 className="self-start text-6xl font-semibold text-secondary mb-5">
-          Tech industry in Saudi Arabia
-        </h1>
-        <div className="text">
+        <DescriptionArticle
+          title="Tech industry in Saudi Arabia"
+          subtitle="A thriving industry"
+        >
           The Saudi Arabia food industry stays the strongest area in the overall
           economy. Saudi Arabia is home to a developing food manufacturing and
           processing field which profits by population and growth in income,
@@ -74,7 +57,7 @@ const SaudiTechIndustry = () => {
           potential of exponential growth in the Saudi food industry leading to
           evident success and proving to be a gateway to success while spreading
           out throughout the region.
-        </div>
+        </DescriptionArticle>
       </div>
     </Section>
   );

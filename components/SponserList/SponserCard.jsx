@@ -3,9 +3,9 @@ import React from 'react';
 
 const SponserCard = ({ sponserImage, sponserCountry, sponserName, className }) => {
   return (
-    <div className={`${className} flex justify-center`}>
-      <div className="rounded-lg shadow-md hover:shadow-lg hover:cursor-pointer transition-all duration-300 ease-in bg-white max-w-sm flex flex-col justify-center items-center">
-        <div className="max-w-full h-[150px] min-w-[384px]">
+    <div className={`${className} flex justify-center `}>
+      <div className="rounded-lg shadow-md w-full hover:shadow-lg hover:cursor-pointer transition-all duration-300 ease-in bg-white max-w-sm flex flex-col justify-center items-center">
+        <div className="max-w-full h-[150px] lg:min-w-[384px] ">
           <Image
             className="rounded-t-lg p-3 mx-auto"
             width={150}

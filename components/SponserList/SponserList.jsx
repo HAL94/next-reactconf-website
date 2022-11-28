@@ -23,7 +23,7 @@ const SponserList = ({ sponserList }) => {
         Official Sponsers
       </h1>
       <div className={`flex flex-col ${styles.reveal}`} data-sponser="sponser">
-        <h1 className="container mx-auto text-left mt-8 w-full text-4xl font-semibold text-primary">
+        <h1 className="text-left mt-8 w-full text-4xl font-semibold text-primary">
           Platinium Sponsers
         </h1>
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-2 my-12">
@@ -39,7 +39,7 @@ const SponserList = ({ sponserList }) => {
         </div>
       </div>
       <div className={`flex flex-col ${styles.reveal}`} data-sponser="sponser">
-        <h1 className="container mx-auto text-left mt-8 w-full text-4xl font-semibold text-yellow-500">
+        <h1 className="text-left mt-8 w-[327px] lg:w-full text-4xl font-semibold text-yellow-500">
           Gold Sponsers
         </h1>
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-2 my-12">

@@ -31,3 +31,11 @@ export const getSectorsList = `*[_type == "sector"]{
     name,
     "image": image.asset->url,    
 }`;
+
+export const getSpeakers = `*[_type == "speaker"]{
+    _id,
+    name,
+    sessionTitle,
+    sessionDetails,
+    "image": speakerImage.asset->url,    
+}`;

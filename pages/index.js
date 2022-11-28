@@ -2,7 +2,12 @@ import HeroSection from '../components/HeroSection/HeroSection';
 import Section from '../components/Section/Section';
 import Navbar from '../components/Navbar/Navbar';
 import WhyUs from '../components/WhyUs/WhyUs';
-import { getConfInfo, getExhibitorList, getSponserInfo, getSectorsList } from '../groc-queries';
+import {
+  getConfInfo,
+  getExhibitorList,
+  getSponserInfo,
+  getSectorsList,
+} from '../groc-queries';
 import client from '../sanity-client';
 import SponserList from '../components/SponserList/SponserList';
 import ExhibitorList from '../components/ExhibitorList/ExhibitorList';
@@ -35,7 +40,7 @@ export async function getStaticProps() {
         confDetails: confResult[0],
         sponserResult: sponserResult,
         exhibitorResult: exhibitorResult,
-        sectorsResult: sectorsResult
+        sectorsResult: sectorsResult,
       },
     };
   } catch (error) {
@@ -47,13 +52,18 @@ export async function getStaticProps() {
     };
   }
 }
-const Home = ({ confDetails, sponserResult, exhibitorResult, sectorsResult }) => {
+const Home = ({
+  confDetails,
+  sponserResult,
+  exhibitorResult,
+  sectorsResult,
+}) => {
   return (
     <>
-      <Section className='min-h-screen'>        
+      <Section className="min-h-screen">
         <HeroSection confDetails={confDetails} />
       </Section>
-      <Section className='min-h-screen bg-[#fafafa]'>
+      <Section className="min-h-screen bg-[#fafafa]">
         <WhyUs
           aboutConf={confDetails.confDescription}
           whyUsImage={confDetails.images['whyUs']}
@@ -72,12 +82,11 @@ const Home = ({ confDetails, sponserResult, exhibitorResult, sectorsResult }) =>
         <SectorsList sectorsList={sectorsResult} />
       </Section>
       <Section className="py-20 lg:px-16 px-7 min-h-screen">
-        <JoinUs/>
+        <JoinUs />
       </Section>
     </>
   );
-}
-
+};
 
 Home.Layout = RootLayout;
 

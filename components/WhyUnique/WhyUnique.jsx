@@ -18,16 +18,16 @@ const WhyUnique = () => {
       <h1 className="text-center text-6xl font-semibold text-secondary mb-36">
         Exhibit With Us
       </h1>
-      <div className={`absolute w-[70px] h-[70px] top-0 ${styles.reveal}`}>
+      <div className={`absolute hidden lg:block w-[70px] h-[70px] top-0 ${styles.reveal}`}>
         <Image src={TwiseLineOne} fill alt={'Twist Decoration'} />
       </div>
-      <div className={`absolute w-[70px] h-[70px] top-[100px] left-[100px] ${styles.reveal}`}>
+      <div className={`absolute hidden lg:block w-[70px] h-[70px] top-[100px] left-[100px] ${styles.reveal}`}>
         <Image src={TwiseLineTwo} fill alt={'Twist Decoration'} />
       </div>
-      <div className={`absolute w-[70px] h-[70px] top-[100px] right-0 ${styles.reveal}`}>
+      <div className={`absolute hidden lg:block w-[70px] h-[70px] top-[100px] right-0 ${styles.reveal}`}>
         <Image src={TwiseLineThree} fill alt={'Twist Decoration'} />
       </div>
-      <div className={`absolute w-[70px] h-[70px] top-[10px] right-[100px] ${styles.reveal}`}>
+      <div className={`absolute hidden lg:block w-[70px] h-[70px] top-[10px] right-[100px] ${styles.reveal}`}>
         <Image src={TwiseLineThree} fill alt={'Twist Decoration'} />
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-4">

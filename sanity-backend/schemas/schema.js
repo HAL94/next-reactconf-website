@@ -1,14 +1,15 @@
 // First, we must import the schema creator
-import createSchema from 'part:@sanity/base/schema-creator'
+import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
+import schemaTypes from 'all:part:@sanity/base/schema-type';
 import websiteImage from './website-image';
 import expo from './expo';
 import sponser from './sponser';
 import sponserTier from './sponser-tier';
 import exhibitor from './exhibitor';
 import sector from './sector';
+import speaker from './speaker';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -22,6 +23,7 @@ export default createSchema({
     sponser,
     sponserTier,
     exhibitor,
-    sector
+    sector,
+    speaker,
   ]),
-})
+});

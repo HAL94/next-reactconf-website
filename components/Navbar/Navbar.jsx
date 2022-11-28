@@ -8,11 +8,13 @@ import styles from './Navbar.module.css';
 import Nav from './Nav';
 import { createButtonRipple } from '../../utils';
 import Sidenav from './Sidenav';
+import { useRouter } from 'next/router';
 
 const Navbar = ({ websiteLinks }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollPosition, windowWidth } = useScrollPosition();
   const shouldShrink = scrollPosition > 50 && windowWidth > 1023;
+  const router = useRouter();
 
   return (
     <header
@@ -36,7 +38,7 @@ const Navbar = ({ websiteLinks }) => {
         containerClassName="container py-0 px-0 lg:px-10 my-0 mx-auto flex items-center lg:justify-center justify-between"
         logoUrl={logo}
       >
-        <button className="ml-auto primary-button hidden lg:block">
+        <button className="ml-auto primary-button hidden lg:block" onClick={() => router.push('/register')}>
           Register Now
         </button>
         <button
